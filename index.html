@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+  <div class=" card-panel orange darken-1">
+    <div class="col 12"> 
+        <h1 class="center-align">Weather Dashboard</h1>
+      </div>
+  </div>
+
+  <main class="container dashboard">
+    <div class="row">
+      <!-- right columns -->
+      <div class="col 12 ">
+        <div class="row">
+          <div class="col 12 currentWeather">
+            <div class="d-flex cityName">
+              <h2 id="city"></h2>
+              <h3 id="date"></h3>
+              <img id="weather-icon"/>
+            </div>
+          </div>
+            <p class="pt-1 pl-2">Temperature:<span id="temperature"></span>&deg;F</p>
+            <p class="pl-2">Humidity:<span id="humidity"></span>%</p>
+            <p class="pl-2">Wind Speed:<span id="wind"></span>MPH</p>
+            <p class="pl-2">UV Index:<span id="uv-index" class="p-1"></span></p>
+          </div>    
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+    <script src="./assets/javascript/script.js"></script>
+</body>
+</html>
