@@ -5,9 +5,9 @@ var submitBtn = $("#submit");
 var storedCity = JSON.parse(localStorage.getItem("city")) || [];
 var cityName = "";
 var cityTable = $(".table")
-if(storedCity.length > 10) {
-    storedCity.shift();
-};
+// if(storedCity.length > 10) {
+//     storedCity.shift();
+// };
 
 // Current Weather
 function getCurrentWeather (){
@@ -83,28 +83,29 @@ function searchCity (event) {
     event.preventDefault();
     cityName = cityInput.val();
     getCurrentWeather();
-    if (storedCity.includes(cityInput) || cityInput === "") {
-        return;
-    }
-    var cityList = $("#cityList")
-    cityList.text(cityInput);
-    cityList.val(cityInput);
-    cityTable.append(cityList);
-    storedCity.push(cityInput);
-    localStorage.setItem("city", JSON.stringify(storedCity));
-}
-
-function init(storedCity) {
-    if (storedCity !== null) {
-        for(var i = 0; i < storedCity.length; i++) {
-            var cityList = $("#cityList")
-            cityList.text([storedCity[i]]);
-            cityList.val(storedCity[i]);
-            cityTable.append(cityList);
-        }
-    }
+//     if (storedCity.includes(cityInput) || cityInput === "") {
+//         return;
+//     }
+//     var cityList = $("#cityList")
+//     cityList.text(cityInput);
+//     cityList.val(cityInput);
+//     cityTable.append(cityList);
+//     storedCity.push(cityInput);
+//     localStorage.setItem("city", JSON.stringify(storedCity));
 };
 
-init(storedCity);
+// function init(storedCity) {
+//     if (storedCity !== null) {
+//         for(var i = 0; i < storedCity.length; i++) {
+//             var cityList = $("#cityList")
+//             cityList.text([storedCity[i]]);
+//             cityList.val(storedCity[i]);
+//             cityTable.append(cityList);
+//         }
+//     }
+// };
+
+// init(storedCity);
+//localStorage did not make the final cut I could get it to save locally but only object, object would pop up in the table
 
 submitBtn.on("click", searchCity)
