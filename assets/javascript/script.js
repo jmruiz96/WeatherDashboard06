@@ -2,8 +2,12 @@ var apiKey = "7a480e36f75524b0ccdac9a4e3614bcf";
 //            7a480e36f75524b0ccdac9a4e3614bcf
 var cityInput = $("#city-input");
 var submitBtn = $("#submit");
-
+var storedCity = JSON.parse(localStorage.getItem("city")) || [];
 var cityName = "";
+var cityTable = $(".table")
+if(storedCity.length > 10) {
+    storedCity.shift();
+};
 
 // Current Weather
 function getCurrentWeather (){
@@ -50,6 +54,7 @@ function displayCurrentWeather (data) {
 
     var icon = $("#icon")
     icon.src = 'http://openweathermap.org/img/w/${data.weather[0].icon}.@2x.png'
+    // come back if time
 }
 
 //5-day forcast
@@ -69,6 +74,7 @@ function displayForecast (data1,index) {
 
     var icon = $("#icon" + (index + 1))
     icon.src = "http://openweathermap.org/img/wn/"+ data1.list[index].weather[0].icon +"@2x.png"
+    //just straight up not working will come back
 }
 // }
 // }
@@ -77,6 +83,28 @@ function searchCity (event) {
     event.preventDefault();
     cityName = cityInput.val();
     getCurrentWeather();
+    if (storedCity.includes(cityInput) || cityInput === "") {
+        return;
+    }
+    var cityList = $("#cityList")
+    cityList.text(cityInput);
+    cityList.val(cityInput);
+    cityTable.append(cityList);
+    storedCity.push(cityInput);
+    localStorage.setItem("city", JSON.stringify(storedCity));
 }
+
+function init(storedCity) {
+    if (storedCity !== null) {
+        for(var i = 0; i < storedCity.length; i++) {
+            var cityList = $("#cityList")
+            cityList.text([storedCity[i]]);
+            cityList.val(storedCity[i]);
+            cityTable.append(cityList);
+        }
+    }
+};
+
+init(storedCity);
 
 submitBtn.on("click", searchCity)
