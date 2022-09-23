@@ -16,7 +16,7 @@ https://jmruiz96.github.io/WeatherDashboard06/
 
 ## Credits
 
-I did receive tutoring/help from a friend who helped walk through this application with me.
+I did receive tutoring/help from a friend who helped walk through this application with me, Addison Beiter.
 
 https://nu.bootcampcontent.com/NU-Coding-Bootcamp/NU-VIRT-FSF-FT-08-2022-U-LOLC
 
