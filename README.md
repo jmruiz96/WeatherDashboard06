@@ -16,6 +16,8 @@ https://jmruiz96.github.io/WeatherDashboard06/
 
 ## Credits
 
+I did receive tutoring/help from a friend who helped walk through this application with me.
+
 https://nu.bootcampcontent.com/NU-Coding-Bootcamp/NU-VIRT-FSF-FT-08-2022-U-LOLC
 
 https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css
